@@ -1,0 +1,105 @@
+{
+  "common": {
+    "appName": "이미지 변환 에디터",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "retry": "다시 시도",
+    "cancel": "취소",
+    "confirm": "확인",
+    "save": "저장",
+    "close": "닫기"
+  },
+  "guide": {
+    "title": "사용 가이드",
+    "howToUse": "사용 방법",
+    "step1": "위 영역에 이미지를 드래그하거나 클릭하여 파일을 선택하세요",
+    "step2": "원하는 출력 형식(JPEG, PNG, WebP 등)을 선택하세요",
+    "step3": "필요한 경우 필터(흑백, 흐림, 밝기, 대비)를 적용하세요",
+    "step4": "Before/After 미리보기로 결과를 확인하세요",
+    "step5": "다운로드 버튼을 클릭하여 변환된 이미지를 저장하세요",
+    "supportedFormats": "지원 형식",
+    "inputFormats": "입력 가능 형식",
+    "outputFormats": "출력 가능 형식",
+    "inputDesc": "JPEG, PNG, WebP, GIF, BMP, AVIF, HEIC, HEIF, SVG, ICO, TIFF",
+    "outputDesc": "JPEG, PNG, WebP, GIF, BMP, AVIF",
+    "features": "주요 기능",
+    "feature1": "다양한 이미지 형식 간 변환",
+    "feature2": "여러 이미지 동시 업로드 및 처리",
+    "feature3": "실시간 필터 미리보기",
+    "feature4": "품질 조절 가능 (1-100%)",
+    "feature5": "최대 100MB 파일 지원",
+    "note": "참고",
+    "noteDesc": "HEIC/HEIF 형식은 입력만 가능하며, 출력 시 다른 형식으로 변환됩니다. RAW 형식(RAF, ARW, CR2 등)은 현재 서버 처리가 필요합니다."
+  },
+  "upload": {
+    "title": "이미지 업로드",
+    "dropzone": "이미지를 여기에 드래그하거나 클릭하여 선택하세요",
+    "dropzoneActive": "이미지를 놓으세요",
+    "supportedFormats": "지원 형식: JPG, PNG, WebP, GIF, BMP, AVIF, HEIC, SVG, RAW 등",
+    "maxSize": "최대 파일 크기: 100MB",
+    "maxImages": "최대 {count}개 이미지 업로드 가능",
+    "remainingSlots": "남은 슬롯: {count}개",
+    "limitReached": "최대 이미지 개수에 도달했습니다",
+    "selectFiles": "파일 선택",
+    "uploading": "업로드 중...",
+    "uploadSuccess": "업로드 완료",
+    "uploadError": "업로드 실패"
+  },
+  "format": {
+    "title": "출력 형식",
+    "selectFormat": "변환할 형식을 선택하세요",
+    "jpeg": "JPEG - 사진에 최적, 작은 파일 크기",
+    "png": "PNG - 무손실, 투명도 지원",
+    "webp": "WebP - 최신 형식, 우수한 압축",
+    "avif": "AVIF - 최고의 압축, 최신 브라우저",
+    "gif": "GIF - 제한된 색상, 애니메이션 지원",
+    "bmp": "BMP - 비압축, 큰 파일 크기",
+    "quality": "품질",
+    "qualityHint": "높을수록 품질이 좋지만 파일 크기가 커집니다"
+  },
+  "filter": {
+    "title": "이미지 필터",
+    "grayscale": "흑백",
+    "grayscaleDesc": "이미지를 흑백으로 변환",
+    "blur": "흐림",
+    "blurDesc": "이미지에 흐림 효과 적용",
+    "brightness": "밝기",
+    "brightnessDesc": "이미지 밝기 조절",
+    "contrast": "대비",
+    "contrastDesc": "이미지 대비 조절",
+    "reset": "필터 초기화"
+  },
+  "preview": {
+    "title": "미리보기",
+    "before": "원본",
+    "after": "변환 후",
+    "compare": "비교하기",
+    "dragToCompare": "슬라이더를 드래그하여 비교",
+    "processing": "처리 중...",
+    "noImage": "이미지를 업로드하세요"
+  },
+  "download": {
+    "title": "다운로드",
+    "button": "다운로드",
+    "downloadAll": "모두 다운로드",
+    "preparing": "준비 중...",
+    "filename": "파일명",
+    "fileSize": "파일 크기",
+    "success": "다운로드 완료",
+    "error": "다운로드 실패"
+  },
+  "carousel": {
+    "previous": "이전",
+    "next": "다음",
+    "imageCount": "{current} / {total}",
+    "remove": "삭제",
+    "removeAll": "모두 삭제"
+  },
+  "errors": {
+    "invalidFormat": "지원하지 않는 형식입니다",
+    "fileTooLarge": "파일 크기가 너무 큽니다 (최대 100MB)",
+    "processingFailed": "이미지 처리에 실패했습니다",
+    "browserNotSupported": "이 브라우저에서는 지원하지 않는 기능입니다",
+    "networkError": "네트워크 오류가 발생했습니다"
+  }
+}

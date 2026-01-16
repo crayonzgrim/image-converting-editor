@@ -1,0 +1,105 @@
+{
+  "common": {
+    "appName": "Image Converting Editor",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "close": "Close"
+  },
+  "guide": {
+    "title": "User Guide",
+    "howToUse": "How to Use",
+    "step1": "Drag and drop images to the area above or click to select files",
+    "step2": "Select your desired output format (JPEG, PNG, WebP, etc.)",
+    "step3": "Apply filters if needed (Grayscale, Blur, Brightness, Contrast)",
+    "step4": "Check the result with Before/After preview",
+    "step5": "Click the download button to save the converted image",
+    "supportedFormats": "Supported Formats",
+    "inputFormats": "Input Formats",
+    "outputFormats": "Output Formats",
+    "inputDesc": "JPEG, PNG, WebP, GIF, BMP, AVIF, HEIC, HEIF, SVG, ICO, TIFF",
+    "outputDesc": "JPEG, PNG, WebP, GIF, BMP, AVIF",
+    "features": "Key Features",
+    "feature1": "Convert between various image formats",
+    "feature2": "Upload and process multiple images at once",
+    "feature3": "Real-time filter preview",
+    "feature4": "Adjustable quality (1-100%)",
+    "feature5": "Support files up to 100MB",
+    "note": "Note",
+    "noteDesc": "HEIC/HEIF formats are input-only and will be converted to other formats on output. RAW formats (RAF, ARW, CR2, etc.) currently require server-side processing."
+  },
+  "upload": {
+    "title": "Upload Image",
+    "dropzone": "Drag and drop images here or click to select",
+    "dropzoneActive": "Drop images here",
+    "supportedFormats": "Supported formats: JPG, PNG, WebP, GIF, BMP, AVIF, HEIC, SVG, RAW, etc.",
+    "maxSize": "Max file size: 100MB",
+    "maxImages": "Max {count} images allowed",
+    "remainingSlots": "Remaining slots: {count}",
+    "limitReached": "Maximum image limit reached",
+    "selectFiles": "Select Files",
+    "uploading": "Uploading...",
+    "uploadSuccess": "Upload complete",
+    "uploadError": "Upload failed"
+  },
+  "format": {
+    "title": "Output Format",
+    "selectFormat": "Select the format to convert to",
+    "jpeg": "JPEG - Best for photos, smaller file size",
+    "png": "PNG - Lossless, supports transparency",
+    "webp": "WebP - Modern format, good compression",
+    "avif": "AVIF - Best compression, newer browsers",
+    "gif": "GIF - Limited colors, supports animation",
+    "bmp": "BMP - Uncompressed, large file size",
+    "quality": "Quality",
+    "qualityHint": "Higher quality means better image but larger file size"
+  },
+  "filter": {
+    "title": "Image Filters",
+    "grayscale": "Grayscale",
+    "grayscaleDesc": "Convert image to black and white",
+    "blur": "Blur",
+    "blurDesc": "Apply blur effect to image",
+    "brightness": "Brightness",
+    "brightnessDesc": "Adjust image brightness",
+    "contrast": "Contrast",
+    "contrastDesc": "Adjust image contrast",
+    "reset": "Reset Filters"
+  },
+  "preview": {
+    "title": "Preview",
+    "before": "Original",
+    "after": "Converted",
+    "compare": "Compare",
+    "dragToCompare": "Drag slider to compare",
+    "processing": "Processing...",
+    "noImage": "Upload an image to get started"
+  },
+  "download": {
+    "title": "Download",
+    "button": "Download",
+    "downloadAll": "Download All",
+    "preparing": "Preparing...",
+    "filename": "Filename",
+    "fileSize": "File size",
+    "success": "Download complete",
+    "error": "Download failed"
+  },
+  "carousel": {
+    "previous": "Previous",
+    "next": "Next",
+    "imageCount": "{current} / {total}",
+    "remove": "Remove",
+    "removeAll": "Remove All"
+  },
+  "errors": {
+    "invalidFormat": "Unsupported format",
+    "fileTooLarge": "File is too large (max 100MB)",
+    "processingFailed": "Image processing failed",
+    "browserNotSupported": "This feature is not supported in your browser",
+    "networkError": "Network error occurred"
+  }
+}
