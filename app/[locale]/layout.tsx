@@ -32,9 +32,9 @@ const seoData = {
   },
 };
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
-  const locale = params.locale as Locale;
-  const seo = seoData[locale] || seoData.en;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const seo = seoData[locale as Locale] || seoData.en;
   const alternateLocale = locale === "ko" ? "en" : "ko";
 
   return {
