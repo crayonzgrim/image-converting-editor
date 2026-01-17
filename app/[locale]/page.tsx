@@ -27,9 +27,6 @@ export default function HomePage() {
 
         <div className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-6xl space-y-6">
-            {/* Safety Notice */}
-            <SafetyNotice />
-
             {/* Upload section - always visible */}
             {!hasImages ? (
               <>
@@ -60,6 +57,9 @@ export default function HomePage() {
                 <DownloadButton />
               </>
             )}
+
+            {/* Safety Notice - Bottom */}
+            <SafetyNotice />
           </div>
         </div>
 

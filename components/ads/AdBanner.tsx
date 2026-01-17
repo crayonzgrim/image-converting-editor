@@ -38,11 +38,7 @@ export function AdBanner({
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   if (!clientId) {
-    return (
-      <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/20 bg-muted/30 p-4">
-        <span className="text-sm text-muted-foreground">Ad Area</span>
-      </div>
-    );
+    return null;
   }
 
   return (
