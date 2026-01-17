@@ -37,7 +37,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const seo = seoData[locale as Locale] || seoData.en;
   const alternateLocale = locale === "ko" ? "en" : "ko";
-  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   return {
     title: {
@@ -83,9 +82,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         "max-snippet": -1,
       },
     },
-    other: adsenseClientId
-      ? { "google-adsense-account": adsenseClientId }
-      : undefined,
   };
 }
 
@@ -117,6 +113,7 @@ export default async function LocaleLayout({
     <html lang={locale} className="light">
       <head>
         <JsonLd />
+        <meta name="google-adsense-account" content="ca-pub-9100236933960602" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
