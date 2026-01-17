@@ -120,6 +120,9 @@ export default async function LocaleLayout({
     <html lang={locale} className="light">
       <head>
         <JsonLd />
+        {adsenseClientId && (
+          <meta name="google-adsense-account" content={adsenseClientId} />
+        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
