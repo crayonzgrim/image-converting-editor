@@ -101,5 +101,35 @@
     "processingFailed": "Image processing failed",
     "browserNotSupported": "This feature is not supported in your browser",
     "networkError": "Network error occurred"
+  },
+  "safety": {
+    "title": "Safe to Use",
+    "badge": "100% Safe",
+    "description": "All image processing happens in your browser. No data is stored on our servers.",
+    "noStorage": "No Data Storage",
+    "noStorageDesc": "All images are deleted when you refresh the page",
+    "browserOnly": "Browser Processing",
+    "browserOnlyDesc": "Images are never sent to external servers"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": "Image Converting Editor values your privacy.",
+    "section1Title": "Information We Collect",
+    "section1Content": "This service does not collect any personal information. Your uploaded images are processed entirely within your browser and are never sent to or stored on our servers.",
+    "section2Title": "Data Storage",
+    "section2Content": "This service does not store your images or data. When you refresh the page, all images and settings are reset. This is an intentional design to protect your privacy.",
+    "section3Title": "Cookies and Tracking",
+    "section3Content": "This service displays Google AdSense advertisements. Google may use cookies to serve ads. We do not track any user data related to image processing.",
+    "section4Title": "Third-Party Services",
+    "section4Content": "We use Google AdSense for displaying advertisements. For more information about Google's privacy practices, please refer to Google's Privacy Policy.",
+    "section5Title": "Safe Usage",
+    "section5Content": "All image processing is performed locally in your browser. Images are never transmitted to external servers, so you can use this service with confidence.",
+    "contact": "If you have any questions, please feel free to contact us.",
+    "backToHome": "Back to Home"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "copyright": "Image Converting Editor"
   }
 }

@@ -5,3 +5,4 @@ export { FormatSelector } from "./FormatSelector";
 export { FilterPanel } from "./FilterPanel";
 export { DownloadButton } from "./DownloadButton";
 export { UsageGuide } from "./UsageGuide";
+export { SafetyNotice } from "./SafetyNotice";

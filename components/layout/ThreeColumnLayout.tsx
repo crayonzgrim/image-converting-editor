@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { AdBanner } from "@/components/ads/AdBanner";
 
 interface ThreeColumnLayoutProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ export function ThreeColumnLayout({
   children,
   leftSidebar,
   rightSidebar,
-  showSidebars = false, // 광고 추가 시 true로 변경
+  showSidebars = true,
   className,
 }: ThreeColumnLayoutProps) {
   return (
@@ -23,7 +24,7 @@ export function ThreeColumnLayout({
       {showSidebars && (
         <aside className="hidden lg:block lg:w-[335px] lg:shrink-0">
           <div className="sticky top-0 h-screen overflow-y-auto p-4">
-            {leftSidebar || <AdPlaceholder position="left" />}
+            {leftSidebar || <AdBanner format="vertical" />}
           </div>
         </aside>
       )}
@@ -37,24 +38,10 @@ export function ThreeColumnLayout({
       {showSidebars && (
         <aside className="hidden lg:block lg:w-[335px] lg:shrink-0">
           <div className="sticky top-0 h-screen overflow-y-auto p-4">
-            {rightSidebar || <AdPlaceholder position="right" />}
+            {rightSidebar || <AdBanner format="vertical" />}
           </div>
         </aside>
       )}
-    </div>
-  );
-}
-
-interface AdPlaceholderProps {
-  position: "left" | "right";
-}
-
-function AdPlaceholder({ position }: AdPlaceholderProps) {
-  return (
-    <div className="flex h-full items-center justify-center rounded-lg border-2 border-dashed border-muted-foreground/20 bg-muted/30">
-      <span className="text-sm text-muted-foreground">
-        {position === "left" ? "Left Ad Area" : "Right Ad Area"}
-      </span>
     </div>
   );
 }

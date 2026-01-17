@@ -8,13 +8,16 @@ import {
   ImagePreview,
   ImageUploader,
   UsageGuide,
+  SafetyNotice,
 } from "@/components/editor";
 import { Header, ThreeColumnLayout } from "@/components/layout";
 import { useEditorStore } from "@/lib/store/editor-store";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function HomePage() {
   const t = useTranslations("common");
+  const tFooter = useTranslations("footer");
   const hasImages = useEditorStore((state) => state.hasImages());
 
   return (
@@ -24,6 +27,9 @@ export default function HomePage() {
 
         <div className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-6xl space-y-6">
+            {/* Safety Notice */}
+            <SafetyNotice />
+
             {/* Upload section - always visible */}
             {!hasImages ? (
               <>
@@ -59,7 +65,16 @@ export default function HomePage() {
 
         {/* Footer */}
         <footer className="border-t py-4 text-center text-sm text-muted-foreground">
-          <p>Image Converting Editor &copy; {new Date().getFullYear()}</p>
+          <div className="flex items-center justify-center gap-4">
+            <p>{tFooter("copyright")} &copy; {new Date().getFullYear()}</p>
+            <span className="text-muted-foreground/50">|</span>
+            <Link
+              href="/privacy"
+              className="hover:text-foreground transition-colors"
+            >
+              {tFooter("privacy")}
+            </Link>
+          </div>
         </footer>
       </div>
     </ThreeColumnLayout>
