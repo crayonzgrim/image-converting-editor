@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const seo = seoData[locale as Locale] || seoData.en;
   const alternateLocale = locale === "ko" ? "en" : "ko";
+  const adsenseClientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
   return {
     title: {
@@ -65,13 +66,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: locale === "ko" ? "이미지 변환기" : "Image Converter",
       title: seo.title,
       description: seo.description,
-      // Images are auto-generated from opengraph-image.tsx
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
-      // Images are auto-generated from twitter-image.tsx
     },
     robots: {
       index: true,
@@ -84,11 +83,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         "max-snippet": -1,
       },
     },
-    verification: {
-      // Add your verification codes here
-      // google: "your-google-verification-code",
-      // yandex: "your-yandex-verification-code",
-    },
+    other: adsenseClientId
+      ? { "google-adsense-account": adsenseClientId }
+      : undefined,
   };
 }
 
@@ -120,9 +117,6 @@ export default async function LocaleLayout({
     <html lang={locale} className="light">
       <head>
         <JsonLd />
-        {adsenseClientId && (
-          <meta name="google-adsense-account" content={adsenseClientId} />
-        )}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
