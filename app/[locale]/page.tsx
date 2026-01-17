@@ -11,6 +11,7 @@ import {
   SafetyNotice,
 } from "@/components/editor";
 import { Header, ThreeColumnLayout } from "@/components/layout";
+import { KakaoAdFit } from "@/components/ads/KakaoAdFit";
 import { useEditorStore } from "@/lib/store/editor-store";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -27,6 +28,15 @@ export default function HomePage() {
 
         <div className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-6xl space-y-6">
+            {/* Kakao AdFit Banner */}
+            <div className="flex justify-center">
+              <KakaoAdFit
+                unit="DAN-82FNvxH1iYXKO4ke"
+                width={320}
+                height={100}
+              />
+            </div>
+
             {/* Upload section - always visible */}
             {!hasImages ? (
               <>
