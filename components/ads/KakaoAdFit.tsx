@@ -36,7 +36,7 @@ export function KakaoAdFit({ unit, width, height, className }: KakaoAdFitProps) 
     <div ref={containerRef} className={className}>
       <ins
         className="kakao_ad_area"
-        style={{ display: "none" }}
+        style={{ display: "none", width: "100%" }}
         data-ad-unit={unit}
         data-ad-width={width.toString()}
         data-ad-height={height.toString()}
