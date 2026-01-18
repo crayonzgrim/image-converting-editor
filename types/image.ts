@@ -68,6 +68,11 @@ export interface FilterSettings {
   blur: number; // 0-100
   brightness: number; // -100 to 100
   contrast: number; // -100 to 100
+  saturation: number; // -100 to 100
+  sepia: number; // 0-100
+  rotate: number; // 0, 90, 180, 270
+  flipHorizontal: boolean;
+  flipVertical: boolean;
 }
 
 export const DEFAULT_FILTER_SETTINGS: FilterSettings = {
@@ -75,6 +80,11 @@ export const DEFAULT_FILTER_SETTINGS: FilterSettings = {
   blur: 0,
   brightness: 0,
   contrast: 0,
+  saturation: 0,
+  sepia: 0,
+  rotate: 0,
+  flipHorizontal: false,
+  flipVertical: false,
 };
 
 // Image file with metadata and individual settings

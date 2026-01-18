@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import { locales, type Locale } from "@/lib/i18n/config";
 import { JsonLd } from "@/components/seo";
 import "../globals.css";
@@ -112,19 +111,20 @@ export default async function LocaleLayout({
       <head>
         <JsonLd />
         <meta name="google-adsense-account" content="ca-pub-9100236933960602" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9100236933960602"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9100236933960602"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {/* AdSense script loaded via head to avoid data-nscript attribute issue */}
       </body>
     </html>
   );

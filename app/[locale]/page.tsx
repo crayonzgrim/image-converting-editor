@@ -1,14 +1,16 @@
 "use client";
 
 import {
-  DownloadButton,
   FilterPanel,
-  FormatSelector,
+  FormatAndDownload,
   ImageCarousel,
   ImagePreview,
   ImageUploader,
   UsageGuide,
   SafetyNotice,
+  FAQ,
+  FormatComparison,
+  WhyUseThisTool,
 } from "@/components/editor";
 import { Header, ThreeColumnLayout } from "@/components/layout";
 import { KakaoAdFit } from "@/components/ads/KakaoAdFit";
@@ -42,6 +44,11 @@ export default function HomePage() {
               <>
                 <ImageUploader className="min-h-75" />
                 <UsageGuide className="mt-6" />
+
+                {/* Additional content sections for SEO */}
+                <WhyUseThisTool className="mt-6" />
+                <FormatComparison className="mt-6" />
+                <FAQ className="mt-6" />
               </>
             ) : (
               <>
@@ -57,14 +64,11 @@ export default function HomePage() {
                 {/* Preview - full width */}
                 <ImagePreview />
 
-                {/* Controls panel - horizontal layout */}
-                <div className="grid gap-4 md:grid-cols-2">
-                  <FormatSelector />
-                  <FilterPanel />
-                </div>
+                {/* Filter Panel - below image */}
+                <FilterPanel />
 
-                {/* Download - full width */}
-                <DownloadButton />
+                {/* Format Selection & Download - combined */}
+                <FormatAndDownload />
               </>
             )}
 

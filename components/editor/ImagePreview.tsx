@@ -39,6 +39,19 @@ export function ImagePreview({ className }: ImagePreviewProps) {
   }
 
   const filterString = buildFilterString(currentImage.filterSettings);
+  const { rotate, flipHorizontal, flipVertical } = currentImage.filterSettings;
+
+  // Build transform string for rotation and flip
+  const transformParts: string[] = [];
+  if (rotate !== 0) {
+    transformParts.push(`rotate(${rotate}deg)`);
+  }
+  if (flipHorizontal || flipVertical) {
+    const scaleX = flipHorizontal ? -1 : 1;
+    const scaleY = flipVertical ? -1 : 1;
+    transformParts.push(`scale(${scaleX}, ${scaleY})`);
+  }
+  const transformString = transformParts.length > 0 ? transformParts.join(" ") : undefined;
 
   return (
     <Card className={className}>
@@ -79,6 +92,7 @@ export function ImagePreview({ className }: ImagePreviewProps) {
             <CompareView
               originalUrl={currentImage.originalUrl}
               filterString={filterString}
+              transformString={transformString}
             />
           ) : viewMode === "before" ? (
             <SingleView url={currentImage.originalUrl} label={t("before")} />
@@ -86,6 +100,7 @@ export function ImagePreview({ className }: ImagePreviewProps) {
             <SingleView
               url={currentImage.originalUrl}
               filterString={filterString}
+              transformString={transformString}
               label={t("after")}
             />
           )}
@@ -104,9 +119,10 @@ export function ImagePreview({ className }: ImagePreviewProps) {
 interface CompareViewProps {
   originalUrl: string;
   filterString: string;
+  transformString?: string;
 }
 
-function CompareView({ originalUrl, filterString }: CompareViewProps) {
+function CompareView({ originalUrl, filterString, transformString }: CompareViewProps) {
   const [aspectRatio, setAspectRatio] = useState<number>(4 / 3);
 
   useEffect(() => {
@@ -127,7 +143,7 @@ function CompareView({ originalUrl, filterString }: CompareViewProps) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
             }}
           />
         }
@@ -138,8 +154,9 @@ function CompareView({ originalUrl, filterString }: CompareViewProps) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
               filter: filterString,
+              transform: transformString,
             }}
           />
         }
@@ -163,10 +180,11 @@ function CompareView({ originalUrl, filterString }: CompareViewProps) {
 interface SingleViewProps {
   url: string;
   filterString?: string;
+  transformString?: string;
   label: string;
 }
 
-function SingleView({ url, filterString, label }: SingleViewProps) {
+function SingleView({ url, filterString, transformString, label }: SingleViewProps) {
   const [aspectRatio, setAspectRatio] = useState<number>(4 / 3);
 
   useEffect(() => {
@@ -183,8 +201,11 @@ function SingleView({ url, filterString, label }: SingleViewProps) {
       <img
         src={url}
         alt={label}
-        className="h-full w-full object-cover"
-        style={{ filter: filterString || "none" }}
+        className="h-full w-full object-contain"
+        style={{
+          filter: filterString || "none",
+          transform: transformString,
+        }}
       />
       <div className="absolute bottom-2 left-2 rounded bg-background/80 px-2 py-1 text-xs">
         {label}

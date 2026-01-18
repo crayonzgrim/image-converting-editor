@@ -55,10 +55,15 @@ export async function processImage(
     const img = await loadImage(imageUrl);
     URL.revokeObjectURL(imageUrl);
 
+    // Calculate canvas dimensions based on rotation
+    const isRotated90or270 = filterSettings.rotate === 90 || filterSettings.rotate === 270;
+    const canvasWidth = isRotated90or270 ? img.height : img.width;
+    const canvasHeight = isRotated90or270 ? img.width : img.height;
+
     // Create canvas and apply filters
     const canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) {
@@ -68,12 +73,27 @@ export async function processImage(
       };
     }
 
-    // Apply CSS filters
+    // Apply CSS filters (excluding rotation and flip which are handled separately)
     const filters = buildFilterString(filterSettings);
     ctx.filter = filters;
 
-    // Draw image
-    ctx.drawImage(img, 0, 0);
+    // Apply transformations (rotation and flip)
+    ctx.save();
+    ctx.translate(canvasWidth / 2, canvasHeight / 2);
+
+    // Apply rotation
+    if (filterSettings.rotate !== 0) {
+      ctx.rotate((filterSettings.rotate * Math.PI) / 180);
+    }
+
+    // Apply flip
+    const scaleX = filterSettings.flipHorizontal ? -1 : 1;
+    const scaleY = filterSettings.flipVertical ? -1 : 1;
+    ctx.scale(scaleX, scaleY);
+
+    // Draw image centered
+    ctx.drawImage(img, -img.width / 2, -img.height / 2);
+    ctx.restore();
 
     // Convert to output format
     const mimeType = getMimeTypeFromFormat(outputFormat);
@@ -138,6 +158,17 @@ export function buildFilterString(settings: FilterSettings): string {
     // Convert -100 to 100 → 0 to 2 (1 is normal)
     const contrastValue = 1 + settings.contrast / 100;
     filters.push(`contrast(${contrastValue})`);
+  }
+
+  if (settings.saturation !== 0) {
+    // Convert -100 to 100 → 0 to 2 (1 is normal)
+    const saturationValue = 1 + settings.saturation / 100;
+    filters.push(`saturate(${saturationValue})`);
+  }
+
+  if (settings.sepia > 0) {
+    // Convert 0-100 to 0%-100%
+    filters.push(`sepia(${settings.sepia}%)`);
   }
 
   return filters.length > 0 ? filters.join(" ") : "none";
