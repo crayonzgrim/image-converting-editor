@@ -189,6 +189,21 @@
     "gifBestFor": "Simple animations, icons",
     "bmpBestFor": "Original preservation, Windows compatibility"
   },
+  "sidebar": {
+    "quickTips": "Quick Tips",
+    "tip1": "Images are never uploaded to servers - 100% safe",
+    "tip2": "WebP format offers 30% smaller file size than JPEG",
+    "tip3": "Convert up to 10 images at once",
+    "tip4": "HEIC files can be easily converted",
+    "supportedFormats": "Supported Formats",
+    "input": "Input",
+    "output": "Output",
+    "keyFeatures": "Key Features",
+    "feature1": "Multiple format conversion",
+    "feature2": "Filters and effects",
+    "feature3": "Adjustable quality",
+    "feature4": "Batch download"
+  },
   "whyUse": {
     "title": "Why Use Image Converting Editor?",
     "subtitle": "Fast, secure, and free online image conversion tool",

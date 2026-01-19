@@ -30,15 +30,6 @@ export default function HomePage() {
 
         <div className="flex-1 p-4 md:p-6 lg:p-8">
           <div className="mx-auto max-w-6xl space-y-6">
-            {/* Kakao AdFit Banner */}
-            <div className="flex justify-center">
-              <KakaoAdFit
-                unit="DAN-82FNvxH1iYXKO4ke"
-                width={320}
-                height={100}
-              />
-            </div>
-
             {/* Upload section - always visible */}
             {!hasImages ? (
               <>
@@ -48,6 +39,16 @@ export default function HomePage() {
                 {/* Additional content sections for SEO */}
                 <WhyUseThisTool className="mt-6" />
                 <FormatComparison className="mt-6" />
+
+                {/* Kakao AdFit Banner - After content, before FAQ */}
+                <div className="mt-6 flex justify-center">
+                  <KakaoAdFit
+                    unit="DAN-82FNvxH1iYXKO4ke"
+                    width={320}
+                    height={100}
+                  />
+                </div>
+
                 <FAQ className="mt-6" />
               </>
             ) : (

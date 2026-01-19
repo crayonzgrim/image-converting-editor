@@ -189,6 +189,21 @@
     "gifBestFor": "간단한 애니메이션, 아이콘",
     "bmpBestFor": "원본 보존, Windows 호환"
   },
+  "sidebar": {
+    "quickTips": "빠른 팁",
+    "tip1": "이미지는 서버로 전송되지 않아 100% 안전합니다",
+    "tip2": "WebP 형식은 JPEG보다 30% 작은 파일 크기를 제공합니다",
+    "tip3": "최대 10개 이미지를 동시에 변환할 수 있습니다",
+    "tip4": "HEIC 파일도 손쉽게 변환 가능합니다",
+    "supportedFormats": "지원 형식",
+    "input": "입력 가능",
+    "output": "출력 가능",
+    "keyFeatures": "주요 기능",
+    "feature1": "다양한 형식 변환",
+    "feature2": "필터 및 효과 적용",
+    "feature3": "품질 조절 가능",
+    "feature4": "일괄 다운로드"
+  },
   "whyUse": {
     "title": "왜 이미지 변환 에디터를 사용해야 할까요?",
     "subtitle": "빠르고 안전하며 무료인 온라인 이미지 변환 도구",
